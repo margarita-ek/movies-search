@@ -11,6 +11,5 @@ export const useApiRequest = () => {
         }
         fetchData()
     }, [])
-
     return responseData
 }
