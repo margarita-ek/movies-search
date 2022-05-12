@@ -3,13 +3,26 @@ import { Route, Routes, Link } from 'react-router-dom'
 import { MoviesPage } from './components/MoviesPage';
 import { ContactsPage } from './components/ContactsPage';
 import { useApiRequest } from './api/useApiRequest';
+import { useDispatch, useSelector } from 'react-redux';
+import { success } from './toolkitRedux/actions';
 
 function App() {
+  const dispatch = useDispatch()
+  const moviesState = useSelector((state)=> state.movies.movies)
+  const loaderState = useSelector((state)=> state.movies.loader)
   const movies = useApiRequest()
-  
+
+  console.log('moviesState', moviesState);
+  console.log('loaderState', loaderState);
+
+  const getDataMovies = () => { 
+    return dispatch(success(movies))
+  }
+
   useEffect(() => { 
-    console.log('movies', movies);
-  }, [movies])
+    const testTest = getDataMovies()
+    console.log('state', testTest);
+  }, [])
 
   return (
       <>
