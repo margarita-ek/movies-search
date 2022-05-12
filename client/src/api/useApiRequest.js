@@ -1,4 +1,4 @@
-import { useCallback, useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import axios from 'axios';
 
 export const useApiRequest = () => {
@@ -11,5 +11,8 @@ export const useApiRequest = () => {
         }
         fetchData()
     }, [])
+    useEffect(() => { 
+        console.log('responseData', responseData);
+    },[responseData])
     return responseData
 }

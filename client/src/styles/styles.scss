@@ -1,18 +1,9 @@
-@import "_nullstyle";
+// @import "_nullstyle";
 @import "_theme";
 @import "_fonts";
 
 h1{
-    &.normal{
-        font-family: 'Helvetica-normal';
-        font-weight: 400;
-    }
-    &.medium{
-        font-family: 'Helvetica-medium';
-        font-weight: 500;
-    }
-    &.bold{
-        font-family: 'Helvetica-bold';
-        font-weight: 700;
-    }
+    color: red;
+    font-family: 'Helvetica-normal';
+    font-weight: 400;
 }
