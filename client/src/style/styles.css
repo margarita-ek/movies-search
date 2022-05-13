@@ -1,0 +1,16 @@
+@font-face {
+  font-family: 'helveticaneue';
+  font-display: swap;
+  src: url("../fonts/normal/HelveticaNeueNormal.ttf") format("truetype"), url("../fonts/normal/HelveticaNeueNormal.woff") format("woff"), url("../fonts/normal/HelveticaNeueNormal.woff2") format("woff2");
+}
+
+h1 {
+  color: red;
+  font-family: 'helveticaneue';
+  font-weight: 400;
+}
+
+div.logo {
+  width: 500px;
+  height: 500px;
+}
