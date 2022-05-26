@@ -28,7 +28,7 @@ export const Header = () => {
         <>
             <header className="header">
                 <span className="header__logo" title="home"><Link to="/"/></span>
-                <input type="search" title="search" className={`header__search${inputStyleActive ? " activeInput" : ""}`} placeholder={"Поиск"} onChange={(e) => filterMovies(e)} />
+                <input type="search" title="search" className={`header__search${inputStyleActive ? " activeInput" : ""}`} placeholder={"Search"} onChange={(e) => filterMovies(e)} />
                 <Link className="header__link-contacts" to="/contacts" title="contacts">Contacts</Link>
             </header>
             <Routes>
