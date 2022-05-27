@@ -1,5 +1,5 @@
 import { createReducer } from "@reduxjs/toolkit"
-import { fetch, success, error } from "./actions"
+import { fetch, success, err } from "./actions"
 
 const initialState = {
     loader: false,
@@ -14,7 +14,7 @@ export default createReducer(initialState, {
         state.loader = false        
         state.movies = action.payload
     },
-    [error]: function (state) { 
+    [err]: function (state) { 
         state.loader = false
     }
 })
