@@ -13,7 +13,7 @@ export const MoviesPage = () => {
 
     return (
         <main className="main">
-            <Gallery/>
+                <Gallery/>
                 <div className="main__content">
                     <PanelFilter/>
                     <CardsContent dataForCards={dataForCards} showModalCard={showModalCard} setShowModalCard={setShowModalCard}/>
