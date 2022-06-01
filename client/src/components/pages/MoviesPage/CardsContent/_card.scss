@@ -1,0 +1,89 @@
+@import "../../../../styles/theme";
+@import "../../../../styles/mixins";
+
+.card {
+    grid-row: 3/4;
+    grid-column: 2/3;
+    display: grid;
+    grid-row-gap: 20px;
+    grid-column-gap: 10px;
+    grid-template: 400px/ repeat(4, 1fr);
+    grid-auto-rows: 400px;
+
+    &__container {
+        height: 400px;
+        width: 250px;
+        overflow: hidden;
+        border-radius: 4px;
+        background-color: $white;
+        box-shadow: 1px 1px 10px rgba(117, 117, 117, 0.244);
+
+        &:hover {
+            box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.587);
+            transform: scale(1.02, 1.02);
+        }
+    }
+
+    &__image {
+        background-color: $white;
+        height: 320px;
+        position: relative;
+        cursor: pointer;
+
+        img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 100%;
+            width: 100%;
+            object-fit: cover;
+            background-color: $black;
+        }
+    }
+
+    &__description {
+        padding: 10px 7px;
+        background-color: $white;
+        height: 80px;
+        display: grid;
+        grid-template: repeat(2, 40px) / 80% 20%;
+        align-items: baseline;
+    }
+
+    &__title {
+        color: $black;
+        text-transform: uppercase;
+        font-weight: 600;
+        letter-spacing: 1.12px;
+        font-size: 16px;
+        font-stretch: condensed;
+        text-overflow: ellipsis;
+        overflow: hidden;
+        white-space: nowrap;
+    }
+
+    &__vote-average {
+        justify-self: end;
+
+        &>div {
+            display: grid;
+            grid-template: 1fr/1fr;
+            justify-items: center;
+            align-items: center;
+            color: $blue;
+            font-weight: 600;
+            border: 2px solid $blue;
+            border-radius: 4px;
+            width: 36px;
+            height: 20px;
+            text-align: center;
+        }
+    }
+
+    &__genre {
+        color: $blue;
+        letter-spacing: 1.12px;
+        font-size: 14px;
+        font-weight: 600;
+    }
+}

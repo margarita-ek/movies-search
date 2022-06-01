@@ -1,17 +1,12 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { Route, Routes, Link } from 'react-router-dom'
-import { MoviesPage } from './pages/MoviesPage';
-import { ContactsPage } from './pages/ContactsPage';
+import { MoviesPage } from '../pages/MoviesPage/MoviesPage';
+import { ContactsPage } from '../pages/ContactsPage/ContactsPage';
 
-export const Header = () => { 
-    /*const stateMovies = ... тут мы получили со стейта массив фильмов*/
+export const Header = () => {
     const [moviesList, setMoviesList] = useState([])
     const [filteredMovies, setFilteredMovies] = useState([])
     const [inputStyleActive, setInputStyleActive] = useState(false)
-
-    /*useEffect(() => { 
-        setMoviesList(stateMovies)
-    }, []) - тут помещаем фильмы в лист*/
 
     const filterMovies = (event) => { 
         if (event.target.value.length > 0) {

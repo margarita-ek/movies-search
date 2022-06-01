@@ -1,15 +1,20 @@
-import React from "react";
+import React, { useEffect } from "react";
 import Carousel from "nuka-carousel";
 
-export const Gallery = () => {
+export const Gallery = (props) => {
+    const { dataForCards } = props
+
+    let filterObjForGallery = dataForCards.filter(el => el.hasOwnProperty("gallery"))
+
     return (
         <div className="main__gallery">
             <Carousel style={{ overflow: 'hidden', height: 'calc(100vh - 80px)' }}
                 adaptiveHeight={false}
                 animation={"fade"}
                 autoplay={true}
-                autoplayInterval={3000}
+                autoplayInterval={4000}
                 wrapAround={true}
+                pauseOnHover={false}
                 renderBottomCenterControls={null}
                 defaultControlsConfig={{
                 nextButtonText: ' ',
@@ -30,12 +35,8 @@ export const Gallery = () => {
                         background: 'url("../img/items/nextG.svg") no-repeat',
                     }
                 }}>
-                <img src="../img/gallery/doctorGal.jpg"/>
-                <img src="../img/gallery/batmanGal.jpg"/>
-                <img src="../img/gallery/spiderGal.jpg"/>
-                <img src="../img/gallery/adamGal.jpg"/>
+                {(dataForCards.length && filterObjForGallery.length) !== 0 ? filterObjForGallery.map(obj => <><img key={obj._id} src={`../img/gallery${obj.gallery}`}/> <button className="main__button">View Info</button></>) : null}
             </Carousel>
-
         </div>
     )
 }
