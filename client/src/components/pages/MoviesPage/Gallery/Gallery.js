@@ -1,14 +1,15 @@
-import React, { useEffect } from "react";
+import React from "react";
 import Carousel from "nuka-carousel";
+import { GalleryImg } from "./GalleryImg";
 
 export const Gallery = (props) => {
-    const { dataForCards } = props
+    const { dataForCards, setElementID, setShowModalCard } = props
 
     let filterObjForGallery = dataForCards.filter(el => el.hasOwnProperty("gallery"))
 
     return (
         <div className="main__gallery">
-            <Carousel style={{ overflow: 'hidden', height: 'calc(100vh - 80px)' }}
+            <Carousel style={{ overflow: 'hidden', height: 'calc(100vh - 80px)' }}              
                 adaptiveHeight={false}
                 animation={"fade"}
                 autoplay={true}
@@ -35,7 +36,7 @@ export const Gallery = (props) => {
                         background: 'url("../img/items/nextG.svg") no-repeat',
                     }
                 }}>
-                {(dataForCards.length && filterObjForGallery.length) !== 0 ? filterObjForGallery.map(obj => <><img key={obj._id} src={`../img/gallery${obj.gallery}`}/> <button className="main__button">View Info</button></>) : null}
+                {(dataForCards.length && filterObjForGallery.length) !== 0 ? filterObjForGallery.map(obj => <GalleryImg key={obj._id} obj={obj} setElementID={setElementID} setShowModalCard={setShowModalCard} />) : null}
             </Carousel>
         </div>
     )

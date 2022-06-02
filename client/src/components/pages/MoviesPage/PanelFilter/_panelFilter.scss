@@ -1,0 +1,19 @@
+@import "../../../../styles/theme";
+@import "../../../../styles/mixins";
+
+.filter-panel{
+    padding: 10px 0;
+    grid-row: 2/3;
+    grid-column: 2/3;
+    display: grid;
+    grid-template: auto/ repeat(2, 1fr);
+    &__select{
+        width: auto;
+        justify-self: start;
+        text-transform: uppercase;
+    }
+    &__option{
+        justify-self: end;
+        color: $blue;
+    }
+}

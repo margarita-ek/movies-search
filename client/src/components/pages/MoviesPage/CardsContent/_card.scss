@@ -19,6 +19,7 @@
         box-shadow: 1px 1px 10px rgba(117, 117, 117, 0.244);
 
         &:hover {
+            cursor: pointer;
             box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.587);
             transform: scale(1.02, 1.02);
         }
@@ -28,7 +29,6 @@
         background-color: $white;
         height: 320px;
         position: relative;
-        cursor: pointer;
 
         img {
             position: absolute;
@@ -60,6 +60,9 @@
         text-overflow: ellipsis;
         overflow: hidden;
         white-space: nowrap;
+        &:hover {
+            color: $blue;
+        }
     }
 
     &__vote-average {
@@ -77,6 +80,10 @@
             width: 36px;
             height: 20px;
             text-align: center;
+            &:hover {
+                color: $blue-dark;
+                border: 2px solid $blue-dark;
+            }
         }
     }
 
@@ -85,5 +92,8 @@
         letter-spacing: 1.12px;
         font-size: 14px;
         font-weight: 600;
+        &:hover {
+            color: $blue-dark;
+        }
     }
 }

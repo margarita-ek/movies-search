@@ -8,16 +8,23 @@ import { PanelFilter } from "./PanelFilter/PanelFilter";
 
 export const MoviesPage = () => {
     const [showModalCard, setShowModalCard] = useState(false)
+    const [elementID, setElementID] = useState("")
+    const [valueOption, setValueOption] = useState("all genres")
     const dataForCards = useSelector((state) => state.movies.movies)
     useApiRequest()
+
+    { showModalCard ? document.body.classList.add('modal-full') : document.body.classList.remove('modal-full') }
     
+    useEffect(() => { console.log(valueOption)}, [valueOption])
+
     return (
         <main className="main">
-            <Gallery dataForCards={dataForCards}/>
+            <Gallery dataForCards={dataForCards} showModalCard={showModalCard} setShowModalCard={setShowModalCard} setElementID={setElementID}/>
                 <div className="main__content">
-                    <PanelFilter/>
-                    <CardsContent dataForCards={dataForCards} showModalCard={showModalCard} setShowModalCard={setShowModalCard}/>
-                </div>
+                <PanelFilter dataForCards={dataForCards} setValueOption={setValueOption}/>
+                <CardsContent dataForCards={dataForCards} setShowModalCard={setShowModalCard} setElementID={setElementID} valueOption={valueOption}/>
+            </div>
+            {<ModalCard elementID={elementID} showModalCard={showModalCard} setShowModalCard={setShowModalCard} dataForModalCard={dataForCards} /> }                 
         </main>
     )
 }

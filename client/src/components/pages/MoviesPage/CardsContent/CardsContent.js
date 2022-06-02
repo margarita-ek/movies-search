@@ -1,21 +1,29 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import { Card } from "./Card";
-import { ModalCard } from "../ModalCard/ModalCard";
 
 export const CardsContent = (props) => {
-    const { dataForCards, showModalCard, setShowModalCard } = props
-    const [elementID, setElementID] = useState("")
-    
-    { showModalCard ? document.body.classList.add('modal-full') : document.body.classList.remove('modal-full') }
+    const { dataForCards, setShowModalCard, setElementID, valueOption } = props
+
+    let arrOfGenreValues = []
+
+    dataForCards.forEach((obj) => {
+        for (const key in obj) {
+            if (obj[key] === valueOption) {
+                arrOfGenreValues.push(obj)
+                return arrOfGenreValues
+            }
+        }
+    })
+
+    useEffect(() => console.log('TEST', arrOfGenreValues), [arrOfGenreValues])
 
     return (
         <>
         <div className="main__cards-content card">
-            {(dataForCards.length > 0) ? dataForCards.map(card => {        
+            {(dataForCards.length > 0 && valueOption === "all genres") ? dataForCards.map(card => {        
                 return <Card card={card} key={card._id} setShowModalCard={setShowModalCard} setElementID={setElementID}/>
-            }) : null}            
+            }) : arrOfGenreValues.map(card => { return <Card card={card} key={card._id} setShowModalCard={setShowModalCard} setElementID={setElementID}/>})}            
         </div>     
-            {<ModalCard elementID={elementID} showModalCard={showModalCard} setShowModalCard={setShowModalCard} setElementID={setElementID} dataForModalCard={dataForCards} /> }        
         </>
     )
 }

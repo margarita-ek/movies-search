@@ -2,7 +2,6 @@ import React, { useEffect, useState } from "react";
 
 export const ModalCard = (props) => { 
     const { elementID, showModalCard, setShowModalCard, dataForModalCard } = props;
-    // const [cardContent, setCardContent] = useState()
 
     let arrContent;
     let cardContent;
@@ -10,10 +9,6 @@ export const ModalCard = (props) => {
         arrContent = dataForModalCard.filter((each) => each._id === elementID)
         cardContent = arrContent[0]
     }
-    
-    useEffect(() => { 
-        console.log('modal', cardContent);
-    }, [cardContent])
 
     return(
         <>
