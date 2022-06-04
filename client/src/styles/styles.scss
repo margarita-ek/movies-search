@@ -4,10 +4,12 @@
 @import "_mixins";
 @import "../components/Footer/footer";
 @import "../components/Header/header";
-@import "../components/pages/MoviesPage/Gallery/gallery";
+@import "../components/pages/MoviesPage/Gallery/mainAndGallery";
 @import "../components/pages/MoviesPage/ModalCard/modalCard";
 @import "../components/pages/MoviesPage/CardsContent/card";
 @import "../components/pages/MoviesPage/PanelFilter/panelFilter";
+@import "../components/pages/MoviesPage/PanelFilter/Filter/filter";
+@import "../components/pages/MoviesPage/PanelFilter/Search/search";
 
 body{
     font-family: "helveticaneue";

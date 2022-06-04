@@ -4,26 +4,11 @@ import { MoviesPage } from '../pages/MoviesPage/MoviesPage';
 import { ContactsPage } from '../pages/ContactsPage/ContactsPage';
 
 export const Header = () => {
-    const [moviesList, setMoviesList] = useState([])
-    const [filteredMovies, setFilteredMovies] = useState([])
-    const [inputStyleActive, setInputStyleActive] = useState(false)
-
-    const filterMovies = (event) => { 
-        if (event.target.value.length > 0) {
-            const filtMovie = moviesList.filter((el) => el.title.toLowerCase().includes(event.target.value.toLowerCase()));
-            setFilteredMovies(filtMovie);
-            setInputStyleActive(true)
-        }
-        else if (event.target.value.length >= 0){
-            setInputStyleActive(false)      
-        }
-    }
 
     return (
         <>
             <header className="header">
                 <span className="header__logo" title="home"><Link to="/"/></span>
-                <input type="search" title="search" className={`header__search${inputStyleActive ? " activeInput" : ""}`} placeholder={"Search"} onChange={(e) => filterMovies(e)} />
                 <Link className="header__link-contacts" to="/contacts" title="contacts">Contacts</Link>
             </header>
             <Routes>

@@ -14,8 +14,6 @@ export const MoviesPage = () => {
     useApiRequest()
 
     { showModalCard ? document.body.classList.add('modal-full') : document.body.classList.remove('modal-full') }
-    
-    useEffect(() => { console.log(valueOption)}, [valueOption])
 
     return (
         <main className="main">

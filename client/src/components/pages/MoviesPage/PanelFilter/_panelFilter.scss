@@ -2,18 +2,91 @@
 @import "../../../../styles/mixins";
 
 .filter-panel{
-    padding: 10px 0;
-    grid-row: 2/3;
-    grid-column: 2/3;
+    grid-row: 1/2;
+    grid-column: 1/4;
+    margin-bottom: 15px;
     display: grid;
-    grid-template: auto/ repeat(2, 1fr);
-    &__select{
-        width: auto;
-        justify-self: start;
-        text-transform: uppercase;
-    }
-    &__option{
+    align-items: center;
+    grid-template: 51px/ minmax(10%, 138px) 1fr 1fr 60px minmax(10%, 138px);
+    background-color: $white;
+    &__cards-menu{
+        grid-column: 4/5;
         justify-self: end;
-        color: $blue;
+        width: 20px;
+        height: 20px;
+        background: url("../img/items/group.svg") no-repeat;
+        background-size: 20px;
+        &:hover{
+            background: url("../img/items/group-hover.svg") no-repeat;
+            background-size: 20px;
+        }
+        &.columnMenu{
+            background: url("../img/items/column.svg") no-repeat;
+            background-size: 20px;
+            &:hover {
+                background: url("../img/items/column-hover.svg") no-repeat;
+                background-size: 20px;
+            }
+        }
+    }
+    &__search {
+        justify-self: end;
+        grid-column: 3/4;
+        width: 300px;
+        @include adaptiv-value("height", 35, 24, 1);
+        padding-left: 44px;
+        background: url("../img/items/search.svg") no-repeat 8px 3px;
+        background-size: 20px;
+        border: none;
+        border-radius: 8px;
+        background-color: $white-gray;
+        color: $blue-dark;
+        font-family: "helveticaneue";
+        @include adaptiv-value("font-size", 20, 16, 1);
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 20px;
+        letter-spacing: 0.05em;
+        text-align: left;
+        position: relative;
+        &::placeholder {
+            color: $blue;
+        }
+        &:hover {
+            background: url("../img/items/search-hover.svg") no-repeat 8px 3px;
+            background-size: 20px;
+            background-color: $white-gray;
+        }
+        &:active {
+            background: url("../img/items/search.svg") no-repeat 8px 3px;
+            background-size: 20px;
+            background-color: $white-gray;
+        }
+        &:focus {
+            background: url("../img/items/search.svg") no-repeat 8px 3px;
+            background-size: 20px;
+            background-color: $white-gray;
+            width: 300px;
+            outline: none;
+        }
+        &.activeInput {
+            width: 300px;
+            background-color: $white-gray;
+            &::-webkit-search-cancel-button {
+                -webkit-appearance: none;
+                width: 16px;
+                height: 16px;
+                background: url("../img/items/close-input.svg") no-repeat;
+                background-size: 16px;
+                margin-right: 16px;
+                margin-left: 6px;
+                cursor: pointer;
+                &:hover {
+                    background: url("../img/items/close-input-hover.svg") no-repeat;
+                    background-size: 16px;
+                }
+            }
+        }
     }
 }

@@ -15,8 +15,6 @@ export const CardsContent = (props) => {
         }
     })
 
-    useEffect(() => console.log('TEST', arrOfGenreValues), [arrOfGenreValues])
-
     return (
         <>
         <div className="main__cards-content card">
