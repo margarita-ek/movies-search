@@ -1,9 +1,9 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { Filter } from "./Filter/Filter";
 import { Search } from "./Search/Search";
 
 export const PanelFilter = (props) => {
-    const { dataForCards, setValueOption } = props
+    const { dataForCards, setValueOption, setSearchToggle, setFilteredMovieCard } = props
     const [cardsMenu, setCardsMenu] = useState(false)
 
     const handleClick = () => { 
@@ -13,7 +13,7 @@ export const PanelFilter = (props) => {
     return (
         <div className="main__filter-panel filter-panel">
             <Filter dataForCards={dataForCards} setValueOption={setValueOption} />
-            <Search />
+            <Search dataForCards={dataForCards} setSearchToggle={setSearchToggle} setFilteredMovieCard={setFilteredMovieCard} />
             <div onClick={() => handleClick()} className={`filter-panel__cards-menu${cardsMenu ? " columnMenu" : ""}`}></div>
         </div>
     )

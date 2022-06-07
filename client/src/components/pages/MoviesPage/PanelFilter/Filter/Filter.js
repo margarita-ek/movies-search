@@ -4,7 +4,7 @@ import { ItemForFilterList } from "./ItemForFilterList";
 export const Filter = (props) => { 
     const { dataForCards, setValueOption } = props
 
-    const [showDisplay, setShowDisplay] = useState(true)
+    const [showDisplay, setShowDisplay] = useState(false)
 
     const selectRef = useRef()
     const titleRef = useRef()
@@ -38,12 +38,12 @@ export const Filter = (props) => {
     const changeDisplay = () => { 
         setShowDisplay(!showDisplay)
     }
-
+    
     useEffect(() => { 
         showDisplay ? selectRef.current.setAttribute("data-state", "active") : selectRef.current.setAttribute("data-state", "")
         for (let i = 0; i < allLabels.length; i++) {
-            allLabels[i].addEventListener('click', (evt) => {
-                titleRef.current.textContent = evt.target.textContent;
+            allLabels[i].addEventListener("click", (event) => {
+                titleRef.current.textContent = event.target.textContent;
                 setShowDisplay(false)
             });
         }
@@ -52,9 +52,9 @@ export const Filter = (props) => {
     return (
         <div className="filter-panel__select select" data-state="" ref={selectRef}>
             <div className="select__title" onClick={changeDisplay} ref={titleRef}>all genres</div>
-            <div className="select__list" onClick={handleClick}>
+            <div className="select__list" onClick={handleClick} >
                 <input type="radio" className="select__input" id="optionDefault" name="optionDefault" value="all genres"/>
-                <label className="select__label" htmlFor="optionDefault">all genres</label>
+                <label className="select__label" htmlFor="optionDefault" >all genres</label>
                 {arrForSelect !== undefined ? arrForSelect.map(el => <ItemForFilterList key={el} el={el}/>) : null}
             </div>
         </div>

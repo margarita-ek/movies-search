@@ -9,7 +9,7 @@ export const Gallery = (props) => {
 
     return (
         <div className="main__gallery">
-            <Carousel style={{ overflow: 'hidden', height: 'calc(100vh - 80px)' }}              
+            <Carousel style={{ overflow: "hidden", height: "calc(100vh - 80px)" }}              
                 adaptiveHeight={false}
                 animation={"fade"}
                 autoplay={true}
@@ -18,22 +18,22 @@ export const Gallery = (props) => {
                 pauseOnHover={false}
                 renderBottomCenterControls={null}
                 defaultControlsConfig={{
-                nextButtonText: ' ',
-                prevButtonText: ' ',
+                nextButtonText: " ",
+                prevButtonText: " ",
                     prevButtonStyle: {
-                        width: '70px',
-                        height: '70px',
-                        backgroundSize: '30px',
-                        backgroundPosition: 'center',
-                        background: 'url("../img/items/prevG.svg") no-repeat',
+                        width: "70px",
+                        height: "70px",
+                        backgroundSize: "30px",
+                        backgroundPosition: "center",
+                        background: "url('../img/items/prevG.svg') no-repeat",
                     },
                     nextButtonStyle: {
-                        width: '70px',
-                        height: '70px',
-                        marginRight: '18px',
-                        backgroundSize: '30px',
-                        backgroundPosition: 'center',
-                        background: 'url("../img/items/nextG.svg") no-repeat',
+                        width: "70px",
+                        height: "70px",
+                        marginRight: "18px",
+                        backgroundSize: "30px",
+                        backgroundPosition: "center",
+                        background: "url('../img/items/nextG.svg') no-repeat",
                     }
                 }}>
                 {(dataForCards.length && filterObjForGallery.length) !== 0 ? filterObjForGallery.map(obj => <GalleryImg key={obj._id} obj={obj} setElementID={setElementID} setShowModalCard={setShowModalCard} />) : null}

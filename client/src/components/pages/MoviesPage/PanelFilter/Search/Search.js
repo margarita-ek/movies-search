@@ -1,22 +1,23 @@
 import React, { useState } from "react";
 
 export const Search = (props) => { 
-    const { } = props
+    const { dataForCards, setSearchToggle, setFilteredMovieCard } = props
 
-    const [filteredMovies, setFilteredMovies] = useState([]) 
-    const [moviesList, setMoviesList] = useState([])
-    const [inputStyleActive, setInputStyleActive] = useState(false) 
+    const [inputStyleActive, setInputStyleActive] = useState(false)
     
     const filterMovies = (event) => { 
         if (event.target.value.length > 0) {
-            const filtMovie = moviesList.filter((el) => el.title.toLowerCase().includes(event.target.value.toLowerCase()));
-            setFilteredMovies(filtMovie);
+            setSearchToggle(true)
+            const titleOfObject = dataForCards.filter((el) => el.title.toLowerCase().includes(event.target.value.toLowerCase()))
+            setFilteredMovieCard(titleOfObject)
             setInputStyleActive(true)
         }
-        else if (event.target.value.length >= 0){
-            setInputStyleActive(false)  
+        else if (event.target.value.length === 0){
+            setSearchToggle(false)
+            setFilteredMovieCard([])
+            setInputStyleActive(false)            
         }
-    }     
+    }
 
     return (
         <>

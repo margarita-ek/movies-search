@@ -8,7 +8,6 @@ export const GalleryImg = (props) => {
         const elementClickID = myRef.current.id
         setElementID(elementClickID)
         setShowModalCard(true)
-        console.log('myRef', myRef)
     }    
 
     return (

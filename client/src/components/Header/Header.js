@@ -1,7 +1,7 @@
-import React, { useState } from "react";
-import { Route, Routes, Link } from 'react-router-dom'
-import { MoviesPage } from '../pages/MoviesPage/MoviesPage';
-import { ContactsPage } from '../pages/ContactsPage/ContactsPage';
+import React, { useEffect } from "react";
+import { Route, Routes, Link } from "react-router-dom"
+import { MoviesPage } from "../pages/MoviesPage/MoviesPage";
+import { ContactsPage } from "../pages/ContactsPage/ContactsPage";
 
 export const Header = () => {
 
