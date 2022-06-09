@@ -1,6 +1,7 @@
-import React from "react";
+import React, { useEffect, useRef } from "react";
 import Carousel from "nuka-carousel";
 import { GalleryImg } from "./GalleryImg";
+import { GalleryContent } from "./GalleryContent";
 
 export const Gallery = (props) => {
     const { dataForCards, setElementID, setShowModalCard } = props
@@ -12,7 +13,8 @@ export const Gallery = (props) => {
             <Carousel style={{ overflow: "hidden", height: "calc(100vh - 80px)" }}              
                 adaptiveHeight={false}
                 animation={"fade"}
-                autoplay={true}
+                // autoplay={true}
+                autoplay={false}
                 autoplayInterval={4000}
                 wrapAround={true}
                 pauseOnHover={false}
@@ -38,6 +40,8 @@ export const Gallery = (props) => {
                 }}>
                 {(dataForCards.length && filterObjForGallery.length) !== 0 ? filterObjForGallery.map(obj => <GalleryImg key={obj._id} obj={obj} setElementID={setElementID} setShowModalCard={setShowModalCard} />) : null}
             </Carousel>
+                {(dataForCards.length && filterObjForGallery.length) !== 0 ? filterObjForGallery.map(obj => <GalleryContent key={obj._id} obj={obj} setElementID={setElementID} setShowModalCard={setShowModalCard} />) : null}            
+            {/* <div className="main__gallery-description"></div> */}
         </div>
     )
 }

@@ -42,18 +42,39 @@
         grid-template: auto auto 50px/ minmax(10%, 138px) 1fr minmax(10%, 138px);
         margin-bottom: 80px;
     }
+//====================================================================================
+
+    &__gallery-description{
+        position: absolute;
+        width: 500px;
+        height: 200px;
+        background-color: $blue;
+        bottom: 200px;
+        left: 50%;
+    }
+
+    &__gallery-image{
+        cursor: pointer;
+    }
 
     &__gallery-content {
         position: absolute;
         top: calc(100vh - 200px);
         display: grid;
-        align-items: end;
-        // grid-template: auto/minmax(100px, 1fr) calc(100vw - 488px) 200px minmax(100px, 1fr);
-        grid-template: auto/ minmax(100px, 1fr) 1fr 1fr minmax(100px, 1fr);
+        // align-items: end;
+        // grid-template: auto/minmax(100px, 1fr) minmax(300px, 1500px) minmax(100px, 1fr);
+        grid-template: auto/minmax(100px, 1fr) 1fr minmax(100px, 1fr);
+        // grid-template: auto/ minmax(100px, 1fr) 1fr 1fr minmax(100px, 1fr);
+    }
+
+    &__gallery-container {
+        grid-column: 2/3;
+        display: grid;
+        grid-template: auto/ 1fr 1fr;
     }
 
     &__gallery-title {
-        grid-column: 2/3;
+        // grid-column: 1/2;
         //font-size: 40px;
         @include adaptiv-value("font-size", 40, 16, 1);
         color: $white;
@@ -64,7 +85,7 @@
     }
 
     &__gallery-button {
-        grid-column: 3/4;
+        // grid-column: 2/3;
         display: inline-block;
         justify-self: end;
         width: 150px;
@@ -74,6 +95,7 @@
         background-color: inherit;
         @include adaptiv-value("font-size", 20, 16, 1);
         color: $white;
+        margin-left: 20px;
 
         &:hover {
             background-color: $blue;
