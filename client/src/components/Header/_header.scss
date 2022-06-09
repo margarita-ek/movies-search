@@ -11,10 +11,10 @@
     position: absolute;
     z-index: 10;
     margin: 0 auto;
-    @media (max-width: $md3+px) {
+    @media (max-width: 767.98px) {
         grid-template: repeat(3, auto)/minmax(50px, 1fr) minmax(300px, 1500px) minmax(50px, 1fr);
     }    
-    @media (max-width: $md4+px) {
+    @media (max-width: 479.98px) {
         grid-template: repeat(3, auto)/minmax(20px, 1fr) minmax(200px, 1500px) minmax(20px, 1fr);
     }
 
@@ -31,7 +31,6 @@
             @include adaptiv-value("height", 35, 24, 1);
             @include adaptiv-value("width", 138, 87, 1);
             background: url("../img/logo/movieW.png") 0 0/ 100% 100% no-repeat;
-
             &:hover {
                 background: url("../img/logo/movie.png") 0 0/ 100% 100% no-repeat;
             }
@@ -46,7 +45,6 @@
         letter-spacing: 1.12px;
         @include adaptiv-value("font-size", 20, 16, 1);
         color: $white;
-
         &:hover {
             color: $blue;
         }

@@ -1,4 +1,4 @@
-import React, { createRef, useEffect } from "react";
+import React, { createRef } from "react";
 
 export const GalleryImg = (props) => { 
     const { setElementID, setShowModalCard, obj } = props;
@@ -11,16 +11,14 @@ export const GalleryImg = (props) => {
     }    
 
     return (
-        <>
-            {/* <div className="main__gallery-image"> */}
-                <img className="main__gallery-image" onClick={handleClick} src={`../img/gallery${obj.gallery}`} id={obj._id} ref={myRef}/>
-            {/* </div> */}
-            {/* <div className="main__gallery-content">
+        <div className="main__gallery-slick-container">
+            <img className="main__gallery-image slick-img" src={`../img/gallery${obj.gallery}`} id={obj._id} ref={myRef}/>
+            <div className="main__gallery-content">
                 <div className="main__gallery-container">
                     <span className="main__gallery-title">{obj.title}</span>
                     <button ref={myRef} id={obj._id} onClick={handleClick} className="main__gallery-button">View Info</button>           
                 </div>    
-            </div>      */}
-        </>
+            </div>     
+        </div>
     )
 }
