@@ -8,8 +8,10 @@ export const Header = () => {
     return (
         <>
             <header className="header">
-                <span className="header__logo" title="home"><Link to="/"/></span>
-                <Link className="header__link-contacts" to="/contacts" title="contacts">Contacts</Link>
+                <div className="header__container">
+                    <span className="header__logo" title="home"><Link to="/"/></span>
+                    <Link className="header__link-contacts" to="/contacts" title="contacts">Contacts</Link>                    
+                </div>
             </header>
             <Routes>
                 <Route path="/" element={<MoviesPage />} />

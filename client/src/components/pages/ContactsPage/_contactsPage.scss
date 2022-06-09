@@ -5,10 +5,131 @@
     height: 100vh;
     background-color: $gray-dark;
     display: grid;
-
+    grid-template: 100px 1fr 80px/ 138px 1fr 138px;
+    color: $white;
+    overflow: auto;
     &__content{
+        grid-column: 2/3;
+        grid-row: 2/3;
         width: auto;
         height: auto;
-        background-color: $blue;
+        display: grid;
+        grid-template: auto auto auto auto 1fr/ 1fr;
+    }
+    &__title{
+        font-size: 40px;
+        color: $blue;
+        letter-spacing: 3px;
+        font-weight: 600;
+        position: relative;
+        padding-bottom: 20px;
+        &::after {
+            content: "";
+            width: 100%;
+            height: 1px;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background-color: $gray;
+        }
+    }
+    &__description{
+        margin-top: 20px;
+        font-size: 20px;
+        color: $white;
+        letter-spacing: 0.87px;
+        position: relative;
+        padding-bottom: 20px;
+        &::after{
+            content: "";
+            width: 100%;
+            height: 1px;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background-color: $gray;
+        }
+    }
+    &__subtitle{
+        margin-top: 20px;
+        font-size: 26px;
+        color: $blue;
+        letter-spacing: 2px;
+        font-weight: 600;
+    }
+    &__social-container{
+        margin-top: 15px;
+        display: grid;
+        grid-template: repeat(3, 40px)/1fr;
+    }
+    &__social-pin{
+        padding-left: 40px;
+        position: relative;
+        color: $white;
+        font-size: 20px;
+        &::before{
+            content: "";    
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url("../img/socials/pin.svg") no-repeat;
+            background-size: 20px;
+        }
+        &:hover {
+            color: $blue;
+            &::before{
+                background: url("../img/socials/pin-hover.svg") no-repeat;
+                background-size: 20px;
+            }
+        }
+    }
+    &__social-twi{
+        padding-left: 40px;
+        position: relative;
+        color: $white;
+        font-size: 20px;
+        &::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url("../img/socials/twi.svg") no-repeat;
+            background-size: 25px;
+        }
+        &:hover {
+            color: $blue;
+            &::before {
+                background: url("../img/socials/twi-hover.svg") no-repeat;
+                background-size: 25px;
+            }
+        }
+    }
+    &__social-email{
+        padding-left: 40px;
+        position: relative;
+        color: $white;
+        font-size: 20px;
+        display: grid;
+        &::before {
+            content: "";
+            position: absolute;
+            top: -3px;
+            left: -3px;
+            width: 100%;
+            height: 100%;
+            background: url("../img/socials/email.svg") no-repeat;
+            background-size: 28px;
+        }
+        &:hover {
+            color: $blue;
+            &::before {
+                background: url("../img/socials/email-hover.svg") no-repeat;
+                background-size: 28px;
+            }
+        }
     }
 }
