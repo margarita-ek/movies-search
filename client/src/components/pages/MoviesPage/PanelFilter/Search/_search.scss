@@ -1,2 +1,87 @@
 @import "../../../../../styles/theme";
 @import "../../../../../styles/mixins";
+
+.filter-panel{
+    &__search {
+        justify-self: end;
+        grid-column: 2/3;
+        width: 300px;
+        height: 30px;
+        padding-left: 44px;
+        background: url("../img/items/search.svg") no-repeat 8px 3px;
+        background-size: 20px;
+        border: 1px solid $gray;
+        border-radius: 8px;
+        background-color: $white-gray;
+        color: $blue-dark;
+        font-family: "helveticaneue";
+        @include adaptiv-value("font-size", 20, 16, 1);
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 20px;
+        letter-spacing: 0.05em;
+        text-align: left;
+        position: relative;
+        @media (max-width: 767.98px) {
+            width: auto;
+        }
+        @media (max-width: 479.98px) {
+            grid-row: 1/2;
+            grid-column: 1/2;
+            justify-self: start;
+            width: auto;
+        }
+
+        &::placeholder {
+            color: $blue;
+        }
+
+        &:hover {
+            background: url("../img/items/search-hover.svg") no-repeat 8px 3px;
+            background-size: 20px;
+            background-color: $white-gray;
+        }
+
+        &:active {
+            background: url("../img/items/search.svg") no-repeat 8px 3px;
+            background-size: 20px;
+            background-color: $white-gray;
+        }
+
+        &:focus {
+            background: url("../img/items/search.svg") no-repeat 8px 3px;
+            background-size: 20px;
+            background-color: $white-gray;
+            width: 300px;
+            outline: none;
+            @media (max-width: 767.98px) {
+                width: auto;
+            }
+        }
+
+        &.activeInput {
+            width: 300px;
+            background-color: $white-gray;
+            @media (max-width: 767.98px) {
+                width: auto;
+            }
+
+            &::-webkit-search-cancel-button {
+                -webkit-appearance: none;
+                width: 16px;
+                height: 16px;
+                background: url("../img/items/close-input.svg") no-repeat;
+                background-size: 16px;
+                margin-right: 16px;
+                margin-left: 6px;
+                cursor: pointer;
+
+                &:hover {
+                    background: url("../img/items/close-input-hover.svg") no-repeat;
+                    background-size: 16px;
+                }
+            }
+        }
+    }
+}

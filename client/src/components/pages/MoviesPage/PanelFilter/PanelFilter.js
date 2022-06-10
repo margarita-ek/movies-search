@@ -12,9 +12,11 @@ export const PanelFilter = (props) => {
 
     return (
         <div className="main__filter-panel filter-panel">
-            <Filter dataForCards={dataForCards} setValueOption={setValueOption} />
-            <Search dataForCards={dataForCards} setSearchToggle={setSearchToggle} setFilteredMovieCard={setFilteredMovieCard} />
-            <div onClick={() => handleClick()} className={`filter-panel__cards-menu${cardsMenu ? " columnMenu" : ""}`}></div>
+            <div className="filter-panel__container">
+                <Filter dataForCards={dataForCards} setValueOption={setValueOption} />
+                <Search dataForCards={dataForCards} setSearchToggle={setSearchToggle} setFilteredMovieCard={setFilteredMovieCard} />
+                {/* <div onClick={() => handleClick()} className={`filter-panel__cards-menu${cardsMenu ? " columnMenu" : ""}`}></div> */}
+            </div>
         </div>
     )
 }

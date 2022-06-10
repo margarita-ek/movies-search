@@ -11,12 +11,12 @@ export const GalleryImg = (props) => {
     }    
 
     return (
-        <div className="main__gallery-slick-container">
+        <div className="main__gallery-slick-container" style={{height: "calc(100vh - 80px)"}}>
             <img className="main__gallery-image slick-img" src={`../img/gallery${obj.gallery}`} id={obj._id} ref={myRef}/>
             <div className="main__gallery-content">
                 <div className="main__gallery-container">
                     <span className="main__gallery-title">{obj.title}</span>
-                    <button ref={myRef} id={obj._id} onClick={handleClick} className="main__gallery-button">View Info</button>           
+                    <button ref={myRef} id={obj._id} onClick={handleClick} className="main__gallery-button" title="view info">View Info</button>           
                 </div>    
             </div>     
         </div>

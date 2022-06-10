@@ -3,11 +3,17 @@
 
 .contacts{
     height: 100vh;
-    background-color: $gray-dark;
+    background-color: $blue;
     display: grid;
-    grid-template: 100px 1fr 80px/ 138px 1fr 138px;
+    grid-template: 100px 1fr 80px/ minmax(100px, 1fr) minmax(300px, 1500px) minmax(100px, 1fr);
     color: $white;
     overflow: auto;
+    @media (max-width: 767.98px) {
+        grid-template: 100px 1fr 80px/ minmax(50px, 1fr) minmax(300px, 1500px) minmax(50px, 1fr);
+    }
+    @media (max-width: 479.98px) {
+        grid-template: 100px 1fr 80px/ minmax(20px, 1fr) minmax(200px, 1500px) minmax(20px, 1fr);
+    }
     &__content{
         grid-column: 2/3;
         grid-row: 2/3;
@@ -15,10 +21,11 @@
         height: auto;
         display: grid;
         grid-template: auto auto auto auto 1fr/ 1fr;
+        margin-bottom: 30px;
     }
     &__title{
         font-size: 40px;
-        color: $blue;
+        color: $blue-dark;
         letter-spacing: 3px;
         font-weight: 600;
         position: relative;
@@ -53,7 +60,7 @@
     &__subtitle{
         margin-top: 20px;
         font-size: 26px;
-        color: $blue;
+        color: $blue-dark;
         letter-spacing: 2px;
         font-weight: 600;
     }
@@ -78,10 +85,11 @@
             background-size: 20px;
         }
         &:hover {
-            color: $blue;
+            color: $blue-dark;
             &::before{
+                left: -2px;
                 background: url("../img/socials/pin-hover.svg") no-repeat;
-                background-size: 20px;
+                background-size: 26px;
             }
         }
     }
@@ -101,10 +109,12 @@
             background-size: 25px;
         }
         &:hover {
-            color: $blue;
+            color: $blue-dark;
             &::before {
+                top: -4px;
+                left: -4px;
                 background: url("../img/socials/twi-hover.svg") no-repeat;
-                background-size: 25px;
+                background-size: 30px;
             }
         }
     }
@@ -125,7 +135,7 @@
             background-size: 28px;
         }
         &:hover {
-            color: $blue;
+            color: $blue-dark;
             &::before {
                 background: url("../img/socials/email-hover.svg") no-repeat;
                 background-size: 28px;

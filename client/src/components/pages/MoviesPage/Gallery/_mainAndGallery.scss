@@ -50,8 +50,14 @@
         width: 100%;
         height: auto;
         display: grid;
-        grid-template: auto auto 50px/ minmax(10%, 138px) 1fr minmax(10%, 138px);
+        grid-template: auto auto 50px/ minmax(100px, 1fr) minmax(300px, 1500px) minmax(100px, 1fr);
         margin-bottom: 80px;
+        @media (max-width: 767.98px) {
+            grid-template: auto auto 50px/ minmax(50px, 1fr) minmax(300px, 1500px) minmax(50px, 1fr);
+        }
+        @media (max-width: 479.98px) {
+            grid-template: auto auto 50px/ minmax(20px, 1fr) minmax(200px, 1500px) minmax(20px, 1fr);
+        }
     }
     
 //====================================================================================
