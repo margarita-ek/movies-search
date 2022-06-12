@@ -14,11 +14,11 @@ export const ModalCard = (props) => {
         <>
             { showModalCard && (<div className="modalCard__wrapper">
                 <div className="modalCard__window">
+                    <div className="modalCard__button">
+                        <span onClick={() => setShowModalCard(false)}></span>
+                    </div>                         
                     <div className="modalCard__container">
-                        <div className="modalCard__image" title="poster"><img alt={cardContent.title} src={`../img/movies${cardContent.poster}`} /></div>
-                        <div className="modalCard__button">
-                            <span onClick={() => setShowModalCard(false)}></span>
-                        </div>                    
+                        <div className="modalCard__image" title="poster"><img alt={cardContent.title} src={`../img/movies${cardContent.poster}`} /></div>               
                         <div className="modalCard__content">
                             <div className="modalCard__title"><span>{cardContent.title}</span></div>
                             <div className="modalCard__description">{cardContent.overview}</div>
