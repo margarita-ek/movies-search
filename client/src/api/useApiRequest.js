@@ -1,12 +1,10 @@
-import { useState, useEffect, useCallback } from "react";
+import { useEffect } from "react";
 import axios from 'axios';
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import { fetch, err, success } from "../toolkitRedux/actions";
 
 export const useApiRequest = () => {
-    const [responseData, setResponseData] = useState()
     const dispatch = useDispatch()
-    const moviesState = useSelector((state)=> state.movies.movies)
 
     useEffect(()  => {
         const fetchData = async () => {
