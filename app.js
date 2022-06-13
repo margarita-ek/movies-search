@@ -1,4 +1,5 @@
 const express = require('express')
+const path = require('path')
 const morgan = require('morgan')
 const cors = require('cors')
 require('dotenv').config()
@@ -16,6 +17,10 @@ app.listen(process.env.PORT, (error) => {
     error ? console.log(error) : console.log(`listening port ${process.env.PORT}`);;
 })
 
+app.use(morgan(':method :url :status :res[content-length] - :response-time ms'));
+app.use(cors())
+app.use(moviesRoutes)
+
 if (process.env.NODE_ENV === 'production') {
     app.use('/', express.static(path.join(__dirname, 'client', 'build')))
 
@@ -23,8 +28,3 @@ if (process.env.NODE_ENV === 'production') {
         res.sendFile(path.resolve(__dirname, 'client', 'build', 'index.html'))
     })
 }
-
-app.use(morgan(':method :url :status :res[content-length] - :response-time ms'));
-app.use(cors())
-app.use(moviesRoutes)
-
