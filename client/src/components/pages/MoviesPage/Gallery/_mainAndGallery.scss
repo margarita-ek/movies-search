@@ -66,18 +66,19 @@
         display: inline;
         position: relative;
         z-index: 100;
-        bottom: 200px;
     }
 
     &__gallery-container {
         display: grid;
-        grid-template: repeat(2, auto)/1fr;
+        grid-template: auto 40px/1fr;
         justify-items: center;
     }
 
     &__gallery-title {
+        position: absolute;
+        bottom: 200px;
         grid-row: 1/2;
-        @include adaptiv-value("font-size", 40, 16, 1);
+        @include adaptiv-value("font-size", 36, 14, 1);
         color: $white;
         font-weight: 600;
         letter-spacing: 2.4px;
@@ -96,11 +97,13 @@
         }     
         @media (max-width: 479.98px) {
             max-width: 250px;
-            line-height: 2rem;
+            line-height: 1.5rem;
         }
     }
 
     &__gallery-button {
+        position:absolute;
+        bottom: 150px;
         margin-top: 20px;
         display: inline-block;
         grid-row: 2/3;
@@ -111,6 +114,9 @@
         background-color: inherit;
         @include adaptiv-value("font-size", 20, 16, 1);
         color: $white;
+        @media (max-width: 767.98px) {
+            margin-top: 5px;
+        }
 
         &:hover {
             background-color: $blue;
