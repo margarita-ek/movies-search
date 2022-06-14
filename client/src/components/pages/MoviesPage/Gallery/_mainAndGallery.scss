@@ -70,29 +70,29 @@
 
     &__gallery-container {
         display: grid;
-        grid-template: auto 40px/1fr;
+        grid-template: auto minmax(40px, auto)/1fr;
+        grid-row-gap: 10px;
         justify-items: center;
     }
 
     &__gallery-title {
         position: absolute;
-        bottom: 200px;
+        bottom: 210px;
         grid-row: 1/2;
         @include adaptiv-value("font-size", 36, 14, 1);
         color: $white;
         font-weight: 600;
         letter-spacing: 2.4px;
-        line-height: 3.5rem;    
+        line-height: 2.7rem;    
         text-shadow: 2px 4px 3px rgba(0, 0, 0, 0.3);
         text-transform: uppercase;
         max-width: 850px;
         text-align: center;
         @media (max-width: 991.98px) {
-            line-height: 3rem;
             max-width: 550px;
         }
         @media (max-width: 767.98px) {
-            line-height: 2.5rem;
+            line-height: 2rem;
             max-width: 400px;
         }     
         @media (max-width: 479.98px) {
@@ -104,19 +104,16 @@
     &__gallery-button {
         position:absolute;
         bottom: 150px;
-        margin-top: 20px;
         display: inline-block;
         grid-row: 2/3;
         width: 150px;
-        height: 40px;
+        min-height: 40px;
+        padding: 2px;
         border: 3px solid $white;
         border-radius: 6px;
         background-color: inherit;
         @include adaptiv-value("font-size", 20, 16, 1);
         color: $white;
-        @media (max-width: 767.98px) {
-            margin-top: 5px;
-        }
 
         &:hover {
             background-color: $blue;

@@ -445,15 +445,16 @@ h1, h2, h3, h4, h5, h6 {
 .main__gallery-container {
   display: -ms-grid;
   display: grid;
-  -ms-grid-rows: auto 40px;
+  -ms-grid-rows: auto minmax(40px, auto);
   -ms-grid-columns: 1fr;
-      grid-template: auto 40px/1fr;
+      grid-template: auto minmax(40px, auto)/1fr;
+  grid-row-gap: 10px;
   justify-items: center;
 }
 
 .main__gallery-title {
   position: absolute;
-  bottom: 200px;
+  bottom: 210px;
   -ms-grid-row: 1;
   -ms-grid-row-span: 1;
   grid-row: 1/2;
@@ -461,7 +462,7 @@ h1, h2, h3, h4, h5, h6 {
   color: #fff;
   font-weight: 600;
   letter-spacing: 2.4px;
-  line-height: 3.5rem;
+  line-height: 2.7rem;
   text-shadow: 2px 4px 3px rgba(0, 0, 0, 0.3);
   text-transform: uppercase;
   max-width: 850px;
@@ -476,14 +477,13 @@ h1, h2, h3, h4, h5, h6 {
 
 @media (max-width: 991.98px) {
   .main__gallery-title {
-    line-height: 3rem;
     max-width: 550px;
   }
 }
 
 @media (max-width: 767.98px) {
   .main__gallery-title {
-    line-height: 2.5rem;
+    line-height: 2rem;
     max-width: 400px;
   }
 }
@@ -498,13 +498,13 @@ h1, h2, h3, h4, h5, h6 {
 .main__gallery-button {
   position: absolute;
   bottom: 150px;
-  margin-top: 20px;
   display: inline-block;
   -ms-grid-row: 2;
   -ms-grid-row-span: 1;
   grid-row: 2/3;
   width: 150px;
-  height: 40px;
+  min-height: 40px;
+  padding: 2px;
   border: 3px solid #fff;
   border-radius: 6px;
   background-color: inherit;
@@ -515,12 +515,6 @@ h1, h2, h3, h4, h5, h6 {
 @media (max-width: 1500px) {
   .main__gallery-button {
     font-size: calc(16px + 4 * ((100vw - 320px) / 1180));
-  }
-}
-
-@media (max-width: 767.98px) {
-  .main__gallery-button {
-    margin-top: 5px;
   }
 }
 
