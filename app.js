@@ -13,10 +13,6 @@ mongoose
     .then((res) => console.log('Connected to DB'))
     .catch((error) => console.log(error));
 
-app.listen(process.env.PORT, (error) => { 
-    error ? console.log(error) : console.log(`listening port ${process.env.PORT}`);;
-})
-
 app.use(morgan(':method :url :status :res[content-length] - :response-time ms'));
 app.use(cors())
 app.use(moviesRoutes)
@@ -28,3 +24,7 @@ if (process.env.NODE_ENV === 'production') {
         res.sendFile(path.resolve(__dirname, 'client', 'build', 'index.html'))
     })
 }
+
+app.listen(process.env.PORT, (error) => { 
+    error ? console.log(error) : console.log(`listening port ${process.env.PORT}`);;
+})
