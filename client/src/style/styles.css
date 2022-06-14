@@ -555,9 +555,9 @@ h1, h2, h3, h4, h5, h6 {
 
 @media (max-width: 479.98px) {
   .modalCard__wrapper {
-    -ms-grid-rows: minmax(20px, 50px) auto minmax(20px, 50px);
+    -ms-grid-rows: minmax(20px, 50px) auto minmax(80px, 100px);
     -ms-grid-columns: minmax(20px, 1fr) auto minmax(20px, 1fr);
-        grid-template: minmax(20px, 50px) auto minmax(20px, 50px)/minmax(20px, 1fr) auto minmax(20px, 1fr);
+        grid-template: minmax(20px, 50px) auto minmax(80px, 100px)/minmax(20px, 1fr) auto minmax(20px, 1fr);
   }
 }
 
@@ -733,7 +733,7 @@ h1, h2, h3, h4, h5, h6 {
     -ms-grid-rows: minmax(20px, auto) auto auto;
     -ms-grid-columns: auto;
         grid-template: minmax(20px, auto) auto auto/auto;
-    grid-row-gap: 0;
+    grid-row-gap: 10px;
     padding-left: 0;
     padding-top: 20px;
   }
@@ -758,6 +758,12 @@ h1, h2, h3, h4, h5, h6 {
 @media (max-width: 767.98px) {
   .modalCard__title {
     padding-bottom: 10px;
+  }
+}
+
+@media (max-width: 479.98px) {
+  .modalCard__title {
+    padding-bottom: 5px;
   }
 }
 
@@ -790,7 +796,9 @@ h1, h2, h3, h4, h5, h6 {
 
 @media (max-width: 479.98px) {
   .modalCard__description {
-    padding: 15px 0 10px 0;
+    padding: 5px 10px 0px 0;
+    max-height: 80px;
+    overflow: auto;
   }
 }
 
