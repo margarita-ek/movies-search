@@ -1,12 +1,116 @@
-<h1 align="center">movies-search</h1>
+<h1 align="center">Movie search</h1>
 <p align="center">
-  <img style="height: 50px; width: 200px; display:block;" src="https://user-images.githubusercontent.com/73533889/173819826-ad84c1fa-e502-48e6-96d3-b7a7efe490be.png">
+  <img style="height: 50px; width: 200px;" src="https://user-images.githubusercontent.com/73533889/173819826-ad84c1fa-e502-48e6-96d3-b7a7efe490be.png">
 </p>
 <h2 align="center">Сайт с поиском фильмов и фильтрованием по жанрам</h2>
 <p align="center">
   <img style="height: 500px;" src="https://user-images.githubusercontent.com/73533889/173815833-b63f5071-fe2d-4243-aed8-1776f1a81052.png">
 </p>
 <h2 align="center"><a href="https://moviesearchreactapp.herokuapp.com/" target="_blank">:arrow_right: Ссылка на сайт 	:eyes: </a></h2>
+<h2>Описание</h2>
+Сайт реализован c использованием библиотеки React.js. Предоставляет возможность поиска по доступным фильмам и фильтрацию по категориям жанров. Каждая карточка с фильмом открывает модальное окно, которое содержит индивидуальную информацию: наименование, описание, рейтинг, дату выхода и жанр. 
+<h2>О проекте</h2>
+Для реализации сайта я использовала такие технологии как:
+
+- HTML
+- CSS(SCSS)
+- JavaScript
+- Node.js
+- Express
+- MongoDB
+- React.js
+- Redux
+- Slick
+- Heroku
+
+Проект разделен на **frontend** и **backend** части. 
+**Frontend** реализован с использованием библиотеки React.js на основании среды Create React App, используя вспомогательные ресурсы (redux, axios, slick). 
+**Backend** написан на Node.js и обрабатывает базу данных, размещенную на MongoDB.
+<p><a href="https://moviesearchreactapp.herokuapp.com/" target="_blank">Итоговый результат</a> размещен на хостинге Heroku.</p>
+<h2>Содержание сайта</h2>
+
+### Хедер
+
+<p align="center">
+  <img src="https://user-images.githubusercontent.com/73533889/173898679-5049d1cc-694e-410b-ba6e-81be4a6d20a1.png">
+</p>
+
+Хедер содержит две ссылки: логотип с ссылкой на главную страницу и ссылку на страницу с контактами.
+
+### Карусель
+
+<p align="center">
+  <img src="https://user-images.githubusercontent.com/73533889/173892133-dc005d45-1c7e-4616-a859-9a9df3cf68a7.png">
+</p>
+
+Карусель изображений реализована с помощью библиотеки **Slick** для React. Каждые три секунды изображения автоматически сменяются. Также возможность пролистывать слайды вручную. На слайде присутствует наименование фильма и кнопка, открывающая модальное окно с дополнительной информацией.
+
+### Модальное окно
+
+<p align="center">
+  <img src="https://user-images.githubusercontent.com/73533889/173894795-72be1a8a-836e-4900-8963-0ed92c0daf8d.png">
+</p>
+
+Модальное окно содержит подробную информацию по выбранному фильму: наименование, описание, рейтинг, жанр и дату выхода. Закрывается при нажатии на крестик.
+
+### Карточка с фильмом
+
+<p>
+  <img style="height: 300px;" src="https://user-images.githubusercontent.com/73533889/173896507-e0ed740e-9b46-4fb4-9cb5-3342370cc13e.png">
+</p>
+
+Каждая карточка по клику на неё открывает модальное окно, которое содержит подробную информацию для выбранного фильма. Карточка содержит постер, наименование, рейтинг и жанр.
+
+### Фильтр по жанрам
+
+<p>
+  <img src="https://user-images.githubusercontent.com/73533889/173900386-b8a8b72e-199d-42e8-8ccf-ff08502e5274.png">
+</p>
+
+Фильтр позволяет выбрать жанр, который присутствует в базе данных и рендерит карточки соответсвующие выбранному варианту.
+
+### Поиск по наименованию
+
+<p>
+  <img style="height: 330px;" src="https://user-images.githubusercontent.com/73533889/173902581-3b84ac13-2bf4-4fb1-bab6-0fd025360fcc.png">
+</p>
+
+Поиск найдет все карточки, у которых в наименовании есть совпадения с введенным в поле значением.
+
+
+### Страница контактов
+
+<p align="center">
+  <img src="https://user-images.githubusercontent.com/73533889/173904434-e85d67d9-0f62-4198-8ff9-9e7cfe69afb6.png">
+</p>
+
+На странице контактов шаблонный "текст-рыба", имитирующий описание. И список с ссылками на социальные сети.
+
+### Футер
+
+<p>
+  <img src="https://user-images.githubusercontent.com/73533889/173905307-d42a6253-4284-43a2-b152-be00e8714dc0.png">
+</p>
+
+Футер содержит ссылки на: страницу контактов, домашнюю страницу и социальные сети.
+
+### Установка
+Установка зависимостей для проекта
+```
+npm install
+```
+Запуск сайта для разработки
+```
+npm run dev
+```
+Запуск сайта из папки build
+```
+npm run build
+npm run start
+```
+
+
+
 
 
 
