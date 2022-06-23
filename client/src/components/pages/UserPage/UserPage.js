@@ -1,13 +1,15 @@
-import React, { useEffect } from "react";
+import React, { useContext, useEffect } from "react";
+import { AuthContext } from "../../../context/AuthContext";
 
-export const ContactsPage = () => { 
+export const UserPage = () => { 
     const linkContactsOfHeader = document.querySelectorAll(".header__link-contacts")
+    const auth = useContext(AuthContext)
     
     return (
         <main className="main">
             <div className="main__contacts contacts">
                 <div className="contacts__content">
-                    <h1 className="contacts__title">Contacts Page</h1>
+                    <h1 className="contacts__title">{auth.userEmail}</h1>
                     <h2 className="contacts__subtitle">About company</h2>
                     <div className="contacts__description">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</div>
                     <h2 className="contacts__subtitle">Social networks</h2>
