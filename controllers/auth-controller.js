@@ -16,13 +16,13 @@ class authController {
             if (!errors.isEmpty()) {
                 return res.status(400).json({ message: "Ошибка при регистрации", errors })
             }       
-            const { email, password } = req.body;
+            const { username, email, password } = req.body;
             const candidate = await User.findOne({ email })
             if (candidate) {
                 return res.status(400).json({message: "Пользователь с таким e-mail уже существует"})
             }
             const hashPassword = bcrypt.hashSync(password, 7);
-            const user = new User({ email, password: hashPassword })
+            const user = new User({ username, email, password: hashPassword })
             await user.save();
             return res.json({ message: "Пользователь успешно зарегистрирован" })
         } catch (e) {
@@ -33,7 +33,7 @@ class authController {
     
     async login(req, res) { 
         try {
-            const { email, password } = req.body
+            const { username, email, password } = req.body
             const user = await User.findOne({ email })
             if (!user) { 
                 return res.status(400).json({ message: "E-mail не найден" })
@@ -45,7 +45,8 @@ class authController {
             const token = generateAccessToken(user._id)
             const userEmail = user.email
             const userId = user._id
-            return res.json({ token, userEmail, userId})
+            const userName = user.username
+            return res.json({ token, userEmail, userId, userName})
         } catch (e) { 
             console.log(e)
             res.status(400).json({ message: "Ошибка входа в систему" })
