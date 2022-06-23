@@ -4,7 +4,6 @@ import { MoviesPage } from "../pages/MoviesPage/MoviesPage";
 import { ContactsPage } from "../pages/ContactsPage/ContactsPage";
 
 export const Header = () => {
-
     return (
         <>
             <header className="header">
