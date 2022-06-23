@@ -8,6 +8,7 @@ export const AuthPage = () => {
     const { loading, error, request, clearError } = useHttp()
     const [message, setMessage] = useState("")
     const [form, setForm] = useState({
+        username: "",
         email: "",
         password: ""
     })
@@ -17,6 +18,10 @@ export const AuthPage = () => {
         setMessage(error)
         // clearError()
     }, [error])
+
+    useEffect(() => { 
+        console.log('form', form);
+    },[form])
 
 
     useEffect(() => { 
@@ -45,7 +50,7 @@ export const AuthPage = () => {
     const loginHandler = async () => { 
         try {
             const data = await request("/api/auth/login", "POST", { ...form })
-            auth.login(data.token, data.userId, data.userEmail)
+            auth.login(data.token, data.userId, data.userEmail, data.userName)
             setMessage(data.message)
         } catch (error) { }
     }
@@ -55,6 +60,19 @@ export const AuthPage = () => {
             <div className="auth__card">
                 <span className="auth__title">Авторизация</span>
                 <span className="auth__message">{message}</span>
+                <div className="auth__name">
+                    <input
+                        className="auth__name-input"
+                        placeholder="Введите имя"
+                        id="username"
+                        type="text"
+                        name="username"
+                        value={form.username}
+                        onChange={changeHandler}
+                    />
+                    <label htmlFor="username">Name</label>
+                </div>
+
                 <div className="auth__email">
                     <input
                         className="auth__email-input"

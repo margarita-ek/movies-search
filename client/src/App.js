@@ -6,12 +6,12 @@ import { Footer } from './components/Footer/Footer';
 import { Header } from './components/Header/Header';
 
 function App() {
-    const { token, login, logout, userId, userEmail, ready  } = useAuth()
+    const { token, login, logout, userId, userEmail, userName, ready  } = useAuth()
     const isAuthenticated = !!token
     const routes = useRoutes(isAuthenticated)
     return (
     <AuthContext.Provider value={{
-        token, login, logout, userId, userEmail, ready, isAuthenticated
+        token, login, logout, userId, userEmail, userName, ready, isAuthenticated
     }}>
         { isAuthenticated && <div className='wrapper'>
             <Header />

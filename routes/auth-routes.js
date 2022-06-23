@@ -6,6 +6,7 @@ const { check } = require("express-validator");
 const router = new Router()
 
 router.post('/registration', [
+    check('username', "Введите имя").notEmpty(),
     check('email', "Введите корректный e-mail").isEmail(),
     check('password', "Пароль должен быть не менее 6 символов").isLength({min:6})
 ], controller.registration);
