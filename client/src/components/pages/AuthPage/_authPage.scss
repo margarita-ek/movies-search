@@ -21,7 +21,10 @@
     }
     &__nav{
         grid-row: 1/2;
-        height: 50px;
+        height: 40px;
+        max-width: 300px;
+        margin-bottom: 25px;
+        cursor: pointer;
         span{
             display: inline-block;
             font-size: 26px;
@@ -29,6 +32,8 @@
             letter-spacing: 1.5px;
             color: $blue;
             position: relative;
+            margin-bottom: 10px;
+            text-transform: capitalize;
             &:hover{
                 color: $blue-dark;
             }
@@ -58,6 +63,7 @@
     &__card{
         grid-row: 2/3;
         display: flex;
+        margin-top: 10px;
         flex-direction: column;
         width: 400px;
         height: auto;
@@ -103,7 +109,7 @@
 
     input{
         margin-top: 5px;
-        height: auto;
+        height: 35px;
         width: 100%;
         padding: 5px 10px;
         border-radius: 5px;

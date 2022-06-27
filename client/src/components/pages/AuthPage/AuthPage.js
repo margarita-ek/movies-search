@@ -87,6 +87,7 @@ export const AuthPage = () => {
                             <div className="auth__name">
                                 <input
                                     className="auth__name-input"
+                                    title="name"
                                     disabled={loading}
                                     placeholder="Name"
                                     id="username"
@@ -101,6 +102,7 @@ export const AuthPage = () => {
                             <div className="auth__email">
                                 <input
                                     className="auth__email-input"
+                                    title="e-mail"
                                     disabled={loading}
                                     placeholder="E-mail"
                                     id="email"
@@ -115,6 +117,7 @@ export const AuthPage = () => {
                             <div className="auth__password">
                                 <input
                                     className="auth__password-input"
+                                    title="password"
                                     disabled={loading}
                                     placeholder="Password"
                                     id="password"
@@ -127,6 +130,7 @@ export const AuthPage = () => {
                             </div>
                             <button
                                 className="auth__reg"
+                                title="register"
                                 onClick={registerHandler}
                                 disabled={loading}
                             >
@@ -136,6 +140,7 @@ export const AuthPage = () => {
                             <div className="auth__email">
                                 <input
                                     className="auth__email-input"
+                                    title="e-mail"
                                     disabled={loading}
                                     placeholder="E-mail"
                                     id="email"
@@ -150,6 +155,7 @@ export const AuthPage = () => {
                             <div className="auth__password">
                                 <input
                                     className="auth__password-input"
+                                    title="password"
                                     disabled={loading}
                                     placeholder="Password"
                                     id="password"
@@ -162,6 +168,7 @@ export const AuthPage = () => {
                             </div>
                             <button
                                 className="auth__enter"
+                                title="log in"
                                 style={{ marginRight: 10 }}
                                 disabled={loading}
                                 onClick={loginHandler}
