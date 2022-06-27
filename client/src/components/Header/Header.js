@@ -1,8 +1,6 @@
-import React, { useContext, useEffect } from "react";
-import { Route, Routes, Link, useNavigate } from "react-router-dom"
+import React, { useContext } from "react";
+import { Link, useNavigate } from "react-router-dom"
 import { AuthContext } from "../../context/AuthContext";
-import { MoviesPage } from "../pages/MoviesPage/MoviesPage";
-import { UserPage } from "../pages/UserPage/UserPage";
 
 
 export const Header = () => {
