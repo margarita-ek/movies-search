@@ -22,7 +22,8 @@
         grid-row: 2/3;
         grid-column: 2/3;
         display: grid;
-        grid-template: 1fr/ repeat(2, 1fr);
+        align-items: center;
+        grid-template: 1fr/ repeat(2, 1fr) 50px;
     }
 
     &__logo {
@@ -37,16 +38,29 @@
         }
     }
 
-    &__link-contacts {
+    &__link-user {
         justify-self: end;
         font-family: "helveticaneue";
         font-weight: 400;
+        text-transform: capitalize;
         line-height: 1.57;
         letter-spacing: 1.12px;
         @include adaptiv-value("font-size", 20, 16, 1);
         color: $white;
         &:hover {
             color: $blue;
+        }
+    }
+
+    &__link-logout{
+        justify-self: end;
+        display: inline-block;
+        width: 20px;
+        height: 35px;
+        background: url("../img/items/exit-w.svg") 0 0/ 100% 100% no-repeat;
+        cursor: pointer;
+        &:hover {
+            background: url("../img/items/exit-b.svg") 0 0/ 100% 100% no-repeat;
         }
     }
 }

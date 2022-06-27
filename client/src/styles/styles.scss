@@ -10,7 +10,9 @@
 @import "../components/pages/MoviesPage/PanelFilter/panelFilter";
 @import "../components/pages/MoviesPage/PanelFilter/Filter/filter";
 @import "../components/pages/MoviesPage/PanelFilter/Search/search";
-@import "../components/pages/ContactsPage/contactsPage";
+@import "../components/pages/UserPage/userPage";
+@import "../components/pages/AuthPage/authPage";
+@import "../components/Loader/loader";
 
 body{
     font-family: "helveticaneue";
@@ -27,6 +29,10 @@ body{
     overflow: hidden;
     display: flex;
     flex-direction: column;
+}
+
+.container {
+    overflow: hidden;
 }
 
 
