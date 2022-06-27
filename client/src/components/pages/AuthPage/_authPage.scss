@@ -2,43 +2,97 @@
 @import "../../../styles/theme";
 @import "../../../styles/mixins";
 
+.container-auth{
+    width: 100vw;
+    height: 100vh;
+    overflow-y: auto;
+    background-color: $white-gray;
+}
+
 .auth{
-    display: flex;
-    justify-content: center;
-    align-content: center;
+    display: grid;
+    grid-template: 1fr auto 2fr/ 1fr auto 1fr;
+    height: 100vh;
+    &__content{
+        grid-row: 2/3;
+        grid-column: 2/3;
+        display: grid;
+        grid-template: repeat(2, auto)/ auto;
+    }
+    &__nav{
+        grid-row: 1/2;
+        height: 50px;
+        span{
+            display: inline-block;
+            font-size: 26px;
+            font-weight: 600;
+            letter-spacing: 1.5px;
+            color: $blue;
+            position: relative;
+            &:hover{
+                color: $blue-dark;
+            }
+        }
+        .auth__nav-in{
+            margin-right: 20px;
+        }
+
+        .auth__nav-up{
+
+        }
+
+        .navActive {
+            color: $blue-dark;
+            &::before {
+                content: "";
+                position: absolute;
+                display: inline-block;
+                width: 100%;
+                height: 2px;
+                background-color: $blue-dark;
+                top: 100%;
+                margin-top: 5px;
+            }
+        }
+    }
     &__card{
-        margin-top: 5%;
+        grid-row: 2/3;
         display: flex;
         flex-direction: column;
-        width: 300px;
+        width: 400px;
         height: auto;
-        background-color: #B8B827;
+        background-color: $blue;
         border-radius: 5px;
-        padding: 40px 50px;
+        padding: 25px 50px;
         color: $white;
-        box-shadow: 5px 5px 20px rgba(53, 52, 52, 0.651);
+        box-shadow: 2px 2px 10px rgba(53, 52, 52, 0.651);
+        @media (max-width: 767.98px) {
+            width: 300px;
+        }
     }
 
-    &__title{
-        font-size: 26px;
+    &__message{
+        font-size: 20px;
+        font-weight: 600;
         letter-spacing: 1px;
-        text-align: center;
+        color: $red;
+        max-width: 250px;
+        margin-bottom: 15px;
+    }
+
+    .success {
+        color: $green !important;
     }
 
     &__name{
         display: flex;
         flex-direction: column-reverse;
-        margin-top: 20px;
+        margin-bottom: 20px;
     }
 
     &__email{
         display: flex;
         flex-direction: column-reverse;
-        margin-top: 20px;
-    }
-
-    &__email-input{
-
     }
 
     &__password{
@@ -47,55 +101,44 @@
         margin-top: 20px;
     }
 
-    &__password-input{
-
-    }
-
     input{
         margin-top: 5px;
         height: auto;
         width: 100%;
         padding: 5px 10px;
         border-radius: 5px;
+        letter-spacing: 1.5px;
+        color: $gray-dark;
+        font-weight: 600;
+        &:hover{
+            outline: 2px solid $blue-dark;
+        }
+        &:focus{
+            outline: 2px solid $blue-dark;
+        }
     }
 
     label{
         letter-spacing: 1px;
+        font-weight: 500;
+        font-size: 16px;
     }
 
-    &__action{
+    .auth__reg, .auth__enter {
+        margin: 20px 0px 15px 0px;
+        font-size: 20px;
+        font-weight: 500;
+        display: inline-block;
         width: 100%;
-        height: 100%;
-        display: flex;
-        justify-content: space-between;
-        align-items: flex-end;
-        margin-top: 20px;
-        button{
-            display: inline-block;
-            width: 100%;
-            height: 30px;
-            padding: 5px 10px;
-            border-radius: 5px;
-            color: $white;
-            &:disabled {
-                background-color: grey;
-            }
-        }
-    }
-
-    &__enter{
-        background-color: #2D8311;
-        box-shadow: 1px 1px 5px rgba(53, 52, 52, 0.651);
+        min-height: 40px;
+        padding: 2px;
+        border: 3px solid $white;
+        border-radius: 6px;
+        background-color: inherit;
+        color: white;
         &:hover{
-            background-color: #1C6C0A;
-        }
-    }
-
-    &__reg{
-        background-color: #063193;
-        box-shadow: 1px 1px 5px rgba(53, 52, 52, 0.651);
-        &:hover {
-            background-color: #03227A;
+            background-color: white;
+            color: $blue;
         }
     }
 }

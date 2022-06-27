@@ -6,16 +6,14 @@ const { check } = require("express-validator");
 const router = new Router()
 
 router.post('/registration', [
-    check('username', "Введите имя").notEmpty(),
-    check('email', "Введите корректный e-mail").isEmail(),
-    check('password', "Пароль должен быть не менее 6 символов").isLength({min:6})
+    check('username', "Enter your name").notEmpty(),
+    check('email', "Please enter a valid e-mail").isEmail(),
+    check('password', "Password must be at least 6 characters").isLength({min:6})
 ], controller.registration);
 
 router.post('/login', [
-    check('email', "Неверные данные").normalizeEmail().isEmail(),
-    check('password', "Неверные данные").isLength({min:6})
+    check('email', "Wrong data").normalizeEmail().isEmail(),
+    check('password', "Wrong data").isLength({min:6})
 ], controller.login)
-
-router.get('/user', authMiddleware, controller.getUser)
 
 module.exports = router

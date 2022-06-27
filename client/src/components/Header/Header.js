@@ -21,14 +21,10 @@ export const Header = () => {
             <header className="header">
                 <div className="header__container">
                     <span className="header__logo" title="home"><Link to="/home"/></span>
-                    <Link className="header__link-contacts" to="/user" title="user">User Page</Link>                    
-                    <span className="header__link-contacts" onClick={logoutHandler} title="log out">Log Out</span>                    
+                    <Link className="header__link-user" to="/user" title="user">{auth.userName}</Link>                    
+                    <span className="header__link-logout" onClick={logoutHandler} title="log out"></span>                    
                 </div>
             </header>
-            <Routes>
-                <Route path="/home" element={<MoviesPage />} />
-                <Route path="/user" element={<UserPage />} />
-            </Routes>
         </>
     )
 }
