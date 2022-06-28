@@ -1,0 +1,11 @@
+
+@import "../../../../styles/theme";
+@import "../../../../styles/mixins";
+
+.main{
+    &__cards-pagination{
+        grid-row: 3/4;
+        grid-column: 2/3;
+        display: flex;
+    }
+}

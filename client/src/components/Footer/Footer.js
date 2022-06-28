@@ -5,7 +5,7 @@ export const Footer = () => {
     return (
         <footer className="footer">
             <div className="footer__container">
-                <Link className="footer__link-contacts" to="/contacts" title="contacts">Contacts</Link>
+                <Link className="footer__link-contacts" to="/user" title="contacts">Contacts</Link>
                 <span className="footer__logo" title="home"><Link to="/"/></span>
                 <ul className="footer__list-social">
                     <li><a className="pin" title="pinterest" target="_blank" href="https://www.pinterest.ru/"></a></li>

@@ -13,6 +13,7 @@
 @import "../components/pages/UserPage/userPage";
 @import "../components/pages/AuthPage/authPage";
 @import "../components/Loader/loader";
+@import "../components/pages/MoviesPage/Pagination/pagination";
 
 body{
     font-family: "helveticaneue";
@@ -31,7 +32,7 @@ body{
     flex-direction: column;
 }
 
-.container {
+.container-content {
     overflow: hidden;
 }
 

@@ -17,7 +17,7 @@ function App() {
             <Header />
             <Footer />
         </div> }
-        <div className='container'>
+        <div className='container-content'>
             { routes }
         </div>
     </AuthContext.Provider>  

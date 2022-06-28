@@ -12,7 +12,7 @@ export const ModalCard = (props) => {
 
     return(
         <>
-            { showModalCard && (<div className="modalCard__wrapper" onClick={() => setShowModalCard(false)}>
+            { showModalCard && (<div className="modalCard__wrapper">
                 <div className="modalCard__window">
                     <div className="modalCard__button">
                         <span onClick={() => setShowModalCard(false)}></span>

@@ -47,7 +47,11 @@ export const AuthPage = () => {
         }
         setStatus("")
         return
-    }    
+    }
+    
+    useEffect(() => { 
+        console.log('messRef', messRef);
+    }, [messRef])
 
     const changeHandler = (event) => { 
         setForm({ ...form, [event.target.name] : event.target.value })
