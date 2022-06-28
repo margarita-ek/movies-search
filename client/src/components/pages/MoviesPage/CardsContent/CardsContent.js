@@ -1,11 +1,11 @@
-import React, { useRef, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { Pagination } from "../Pagination/Pagination";
 import { Card } from "./Card";
 
 export const CardsContent = (props) => {
     const { dataForCards, setShowModalCard, setElementID, valueOption } = props
     const [currentPage, setCurrentPage] = useState(1)
-    const [moviesPerPage] = useState(4)
+    const [moviesPerPage] = useState(8)
 
     const cardContentRef = useRef()
 
@@ -24,11 +24,8 @@ export const CardsContent = (props) => {
         }
     })
 
-    // const executeScroll = () => { cardContentRef.current.scrollIntoView() }
-
     const paginateClick = (number) => { 
         setCurrentPage(number)
-        // executeScroll()
         return
     }
 

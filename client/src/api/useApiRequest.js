@@ -8,10 +8,11 @@ export const useApiRequest = () => {
 
     useEffect(()  => {
         const fetchData = async () => {
-            dispatch(fetch())
+            dispatch(fetch(true))
             try {
                 const result = await axios('/api/movies',)
-                    .then(res => dispatch(success(res.data)))                
+                    .then(res => dispatch(success(res.data))) 
+                dispatch(fetch(false))
             } catch (error) {
                 dispatch(err())
                 console.log("ERROR in fetchData: ", error)

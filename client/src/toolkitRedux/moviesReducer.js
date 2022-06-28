@@ -7,8 +7,8 @@ const initialState = {
 }
 
 export default createReducer(initialState, {
-    [fetch]: function (state) { 
-        state.loader = true
+    [fetch]: function (state, action) { 
+        state.loader = action.payload
     },
     [success]: function (state, action) {
         state.loader = false        
