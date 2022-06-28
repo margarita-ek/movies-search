@@ -6,9 +6,10 @@
     grid-column: 2/3;
     display: grid;
     justify-items: center;
-    justify-content: space-between;
+    justify-content: space-around;
+    align-content: center;
+    margin-bottom: 20px;
     gap: 20px;
-    
     grid-template: 400px/ repeat(auto-fit, 300px);
     @media (max-width: 1150px) {
         justify-content: center;

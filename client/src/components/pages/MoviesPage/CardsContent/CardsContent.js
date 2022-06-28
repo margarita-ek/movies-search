@@ -1,21 +1,19 @@
-import React, { useEffect, useState } from "react";
+import React, { useRef, useState } from "react";
 import { Pagination } from "../Pagination/Pagination";
 import { Card } from "./Card";
 
 export const CardsContent = (props) => {
     const { dataForCards, setShowModalCard, setElementID, valueOption } = props
     const [currentPage, setCurrentPage] = useState(1)
-    const [moviesPerPage] = useState(8)
+    const [moviesPerPage] = useState(4)
+
+    const cardContentRef = useRef()
 
     let arrOfGenreValues = []
 
     const lastMovieIndex = currentPage * moviesPerPage
     const firstMovieIndex = lastMovieIndex - moviesPerPage
     const currentMovie = dataForCards.slice(firstMovieIndex, lastMovieIndex)
-
-    const paginate = pageNumber => setCurrentPage(pageNumber)
-    const nextPage = () => setCurrentPage( prev => prev + 1)
-    const prevPage = () => setCurrentPage( prev => prev - 1)
 
     dataForCards.forEach((obj) => {
         for (const key in obj) {
@@ -26,13 +24,17 @@ export const CardsContent = (props) => {
         }
     })
 
-    useEffect(() => {
-        console.log('data', dataForCards);
-    }, [dataForCards])
+    // const executeScroll = () => { cardContentRef.current.scrollIntoView() }
+
+    const paginateClick = (number) => { 
+        setCurrentPage(number)
+        // executeScroll()
+        return
+    }
 
     return (
         <>
-            <div className="main__cards-content card">
+            <div className="main__cards-content card" ref={cardContentRef}>
                 {(dataForCards.length > 0 && valueOption === "all genres") ? currentMovie.map(card => {        
                     return <Card card={card} key={card._id} setShowModalCard={setShowModalCard} setElementID={setElementID}/>
                 }) : arrOfGenreValues.map(card => { return <Card card={card} key={card._id} setShowModalCard={setShowModalCard} setElementID={setElementID}/>})}            
@@ -41,10 +43,10 @@ export const CardsContent = (props) => {
                 <Pagination
                     moviesPerPage={moviesPerPage}
                     totalMovies={(valueOption === "all genres") ? dataForCards.length : arrOfGenreValues.length}
-                    paginate={paginate}
+                    paginateClick={paginateClick}
+                    setCurrentPage={setCurrentPage}
+                    currentPage={currentPage}
                 />
-                <button className="btn btn-primary" onClick={prevPage}>Prev Page</button>
-                <button className="btn btn-primary ms-2" onClick={nextPage}>Next Page</button>
             </div>
         </>
     )
