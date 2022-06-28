@@ -429,29 +429,28 @@ h1, h2, h3, h4, h5, h6 {
 
 .main__content {
   width: 100%;
-  overflow: auto;
-  height: calc(100vh - 80px);
+  min-height: calc(100vh - 80px);
   display: -ms-grid;
   display: grid;
-  -ms-grid-rows: auto 1fr 40px 40px;
+  -ms-grid-rows: auto 1fr 40px 20px;
   -ms-grid-columns: minmax(100px, 1fr) minmax(300px, 1500px) minmax(100px, 1fr);
-      grid-template: auto 1fr 40px 40px/minmax(100px, 1fr) minmax(300px, 1500px) minmax(100px, 1fr);
+      grid-template: auto 1fr 40px 20px/minmax(100px, 1fr) minmax(300px, 1500px) minmax(100px, 1fr);
   margin-bottom: 80px;
 }
 
 @media (max-width: 767.98px) {
   .main__content {
-    -ms-grid-rows: auto 1fr 40px 40px;
+    -ms-grid-rows: auto 1fr 40px 20px;
     -ms-grid-columns: minmax(50px, 1fr) minmax(300px, 1500px) minmax(50px, 1fr);
-        grid-template: auto 1fr 40px 40px/minmax(50px, 1fr) minmax(300px, 1500px) minmax(50px, 1fr);
+        grid-template: auto 1fr 40px 20px/minmax(50px, 1fr) minmax(300px, 1500px) minmax(50px, 1fr);
   }
 }
 
 @media (max-width: 479.98px) {
   .main__content {
-    -ms-grid-rows: auto 1fr 40px 40px;
+    -ms-grid-rows: auto 1fr 40px 20px;
     -ms-grid-columns: minmax(20px, 1fr) minmax(200px, 1500px) minmax(20px, 1fr);
-        grid-template: auto 1fr 40px 40px/minmax(20px, 1fr) minmax(200px, 1500px) minmax(20px, 1fr);
+        grid-template: auto 1fr 40px 20px/minmax(20px, 1fr) minmax(200px, 1500px) minmax(20px, 1fr);
   }
 }
 
@@ -1614,6 +1613,18 @@ h1, h2, h3, h4, h5, h6 {
 .auth .auth__reg:hover, .auth .auth__enter:hover {
   background-color: white;
   color: #0aaee4;
+}
+
+.loader-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -ms-flex-line-pack: center;
+      align-content: center;
+  height: 100vh;
 }
 
 .lds-roller {
