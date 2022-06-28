@@ -42,12 +42,12 @@ export const AuthPage = () => {
             setMessage("")
             clearError()
         }
-        if (messRef.current.classList.contains('success')) { 
+        if (messRef.current !== null && messRef.current.classList.contains('success')) {
             messRef.current.classList.remove('success')
         }
         setStatus("")
         return
-    }    
+    }
 
     const changeHandler = (event) => { 
         setForm({ ...form, [event.target.name] : event.target.value })

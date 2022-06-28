@@ -20,7 +20,7 @@ export const MoviesPage = () => {
     return (
         <main className="main">
             <Gallery dataForCards={dataForCards} showModalCard={showModalCard} setShowModalCard={setShowModalCard} setElementID={setElementID} />
-                <div className="main__content">
+            <div className="main__content">
                 <PanelFilter dataForCards={dataForCards} setValueOption={setValueOption} setSearchToggle={setSearchToggle} setFilteredMovieCard={setFilteredMovieCard} />
                 <CardsContent dataForCards={searchToggle ? filteredMovieCard : dataForCards} setShowModalCard={setShowModalCard} setElementID={setElementID} valueOption={valueOption} />
             </div>

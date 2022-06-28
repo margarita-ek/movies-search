@@ -1,0 +1,55 @@
+
+@import "../../../../styles/theme";
+@import "../../../../styles/mixins";
+
+.main{
+    &__cards-pagination{
+        grid-row: 3/4;
+        grid-column: 2/3;
+        align-self: end;
+        display: flex;
+        justify-content: center;
+    }
+}
+
+.pagination{
+    margin-top: 20px;
+    display: flex;
+    &__btn{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 0 5px;
+        width: 40px;
+        height: 40px;
+        border-radius: 5px;
+        background-color: $blue;
+        color: $white;
+        font-size: 16px;
+        font-weight: 600;
+        position: relative;
+        &:hover{
+            background-color: $blue-dark;
+        }
+    }
+    .active-btn {
+        background-color: $blue-dark;
+    }
+}
+
+.prev, .next{
+    &::before {
+        content: "";
+        display: inline-block;
+        position: absolute;
+        width: 14px;
+        height: 14px;
+        background: url("../img/items/arrow-pag.svg") 0 0/ 100% 100% no-repeat;
+    }
+}
+
+.next{
+    &::before{
+        transform: rotate(180deg);
+    }
+}

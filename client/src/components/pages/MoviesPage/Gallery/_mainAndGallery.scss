@@ -48,15 +48,16 @@
 
     &__content {
         width: 100%;
-        height: auto;
+        overflow: auto;
+        height: calc(100vh - 80px);
         display: grid;
-        grid-template: auto auto 50px/ minmax(100px, 1fr) minmax(300px, 1500px) minmax(100px, 1fr);
+        grid-template: auto 1fr 40px 40px/ minmax(100px, 1fr) minmax(300px, 1500px) minmax(100px, 1fr);
         margin-bottom: 80px;
         @media (max-width: 767.98px) {
-            grid-template: auto auto 50px/ minmax(50px, 1fr) minmax(300px, 1500px) minmax(50px, 1fr);
+            grid-template: auto 1fr 40px 40px/ minmax(50px, 1fr) minmax(300px, 1500px) minmax(50px, 1fr);
         }
         @media (max-width: 479.98px) {
-            grid-template: auto auto 50px/ minmax(20px, 1fr) minmax(200px, 1500px) minmax(20px, 1fr);
+            grid-template: auto 1fr 40px 40px/ minmax(20px, 1fr) minmax(200px, 1500px) minmax(20px, 1fr);
         }
     }
     
