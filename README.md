@@ -12,16 +12,16 @@
 <h2>О проекте</h2>
 Для реализации сайта я использовала такие технологии как:
 
-- HTML
-- CSS(SCSS)
-- JavaScript
+- React.js
+- Redux
 - Node.js
 - Express
 - MongoDB
-- React.js
-- Redux
 - Slick
 - Heroku
+- HTML
+- CSS(SCSS)
+- JavaScript
 
 Проект разделен на **frontend** и **backend** части. 
 **Frontend** реализован с использованием библиотеки React.js на основании среды Create React App, используя вспомогательные ресурсы (redux, axios, slick). 
@@ -97,7 +97,7 @@
 ### Футер и пагинация
 
 <p>
-  <https://user-images.githubusercontent.com/73533889/176231719-b501b4ee-00ac-4047-88c2-0abb4f7531fb.png">
+  <img src="https://user-images.githubusercontent.com/73533889/180440627-c4ef1ba5-fa21-4a8b-b65b-fad4a3e6ba0a.png">
 </p>
 
 Пагинация позволяет переходить по страницам с фильмами. Футер содержит ссылки на: страницу контактов, домашнюю страницу и социальные сети.
