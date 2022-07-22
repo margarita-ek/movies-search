@@ -11,8 +11,8 @@ router.post('/registration', [
 ], controller.registration);
 
 router.post('/login', [
-    check('email', "Wrong data").normalizeEmail().isEmail(),
-    check('password', "Wrong data").isLength({min:6})
+    check('email', "Please enter a valid e-mail").normalizeEmail().isEmail(),
+    check('password', "Password must be at least 6 characters").isLength({min:6})
 ], controller.login)
 
 module.exports = router
